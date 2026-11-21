@@ -1,0 +1,22 @@
+# Persistent dining and planning preferences.
+# Read and updated at runtime by the `preferences` in-process MCP tool
+# (tools/preferences_tool.py). Edit by hand or ask the Supervisor to update it.
+
+dietary:
+  # Ingredients to avoid. Any dining option whose highlights mention one of
+  # these is flagged by the Food Agent and down-ranked by the Supervisor.
+  excluded_ingredients:
+    - raw tomatoes
+    - aubergine
+    - courgette
+  # Things to rank higher.
+  prioritise:
+    - high-protein
+  notes: "Cooked tomato sauces are fine; it's raw tomato that's the issue."
+
+planning:
+  # Rain probability (%) at or above which outdoor venues are down-ranked.
+  rain_threshold_pct: 60
+  # Maximum walking distance (km) between the main venue and lunch.
+  max_lunch_distance_km: 2.0
+  prefer_public_transport: false
